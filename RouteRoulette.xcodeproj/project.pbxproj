@@ -16,6 +16,9 @@
 		C69C9EC22AA28342004223ED /* QueryBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C9EC12AA28342004223ED /* QueryBuilderTests.swift */; };
 		C69C9EC52AA2841E004223ED /* FetchPlacesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C9EC42AA2841E004223ED /* FetchPlacesTests.swift */; };
 		C69C9EC72AA284BA004223ED /* MockPlaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69C9EC62AA284BA004223ED /* MockPlaceRepository.swift */; };
+		C69DD6542AA2A48C0020A928 /* FetchFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DD6532AA2A48C0020A928 /* FetchFlights.swift */; };
+		C69DD6562AA2A4A10020A928 /* DateStringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DD6552AA2A4A10020A928 /* DateStringFormatter.swift */; };
+		C69DD6582AA2A73F0020A928 /* DateStringFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69DD6572AA2A73F0020A928 /* DateStringFormatterTests.swift */; };
 		C6BB50952AA21F5000811952 /* SearchTermProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BB50942AA21F5000811952 /* SearchTermProvider.swift */; };
 		C6BB50992AA21FA200811952 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BB50982AA21FA200811952 /* Place.swift */; };
 		C6BB509B2AA2209D00811952 /* GPSCoordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BB509A2AA2209D00811952 /* GPSCoordinate.swift */; };
@@ -61,6 +64,9 @@
 		C69C9EC12AA28342004223ED /* QueryBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryBuilderTests.swift; sourceTree = "<group>"; };
 		C69C9EC42AA2841E004223ED /* FetchPlacesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlacesTests.swift; sourceTree = "<group>"; };
 		C69C9EC62AA284BA004223ED /* MockPlaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlaceRepository.swift; sourceTree = "<group>"; };
+		C69DD6532AA2A48C0020A928 /* FetchFlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchFlights.swift; sourceTree = "<group>"; };
+		C69DD6552AA2A4A10020A928 /* DateStringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringFormatter.swift; sourceTree = "<group>"; };
+		C69DD6572AA2A73F0020A928 /* DateStringFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringFormatterTests.swift; sourceTree = "<group>"; };
 		C6BB50942AA21F5000811952 /* SearchTermProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTermProvider.swift; sourceTree = "<group>"; };
 		C6BB50982AA21FA200811952 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		C6BB509A2AA2209D00811952 /* GPSCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSCoordinate.swift; sourceTree = "<group>"; };
@@ -122,6 +128,7 @@
 			children = (
 				C69C9EC12AA28342004223ED /* QueryBuilderTests.swift */,
 				C69C9EC42AA2841E004223ED /* FetchPlacesTests.swift */,
+				C69DD6572AA2A73F0020A928 /* DateStringFormatterTests.swift */,
 			);
 			path = "Domain Layer";
 			sourceTree = "<group>";
@@ -228,6 +235,8 @@
 				C6BB50942AA21F5000811952 /* SearchTermProvider.swift */,
 				C6FD997E2AA25352002D211F /* QueryBuilder.swift */,
 				C6BB50A22AA223B600811952 /* FetchPlaces.swift */,
+				C69DD6532AA2A48C0020A928 /* FetchFlights.swift */,
+				C69DD6552AA2A4A10020A928 /* DateStringFormatter.swift */,
 			);
 			path = "Domain Layer";
 			sourceTree = "<group>";
@@ -358,12 +367,14 @@
 				C6E699612AA0E80200075041 /* ContentView.swift in Sources */,
 				C6E699972AA0F69B00075041 /* PlaceDatasource.swift in Sources */,
 				C6BB509F2AA220C500811952 /* PlacesResponse.swift in Sources */,
+				C69DD6562AA2A4A10020A928 /* DateStringFormatter.swift in Sources */,
 				C6BB50A32AA223B600811952 /* FetchPlaces.swift in Sources */,
 				C6FD997F2AA25352002D211F /* QueryBuilder.swift in Sources */,
 				C6FD99832AA25788002D211F /* NetworkRoverError.swift in Sources */,
 				C6BB50992AA21FA200811952 /* Place.swift in Sources */,
 				C6E6998B2AA0E93600075041 /* NetworkRover.swift in Sources */,
 				C6BB50A12AA2239600811952 /* UseCase.swift in Sources */,
+				C69DD6542AA2A48C0020A928 /* FetchFlights.swift in Sources */,
 				C6BB509B2AA2209D00811952 /* GPSCoordinate.swift in Sources */,
 				C6FD99892AA257CD002D211F /* APIRequestBuilder.swift in Sources */,
 				C6E6995F2AA0E80200075041 /* RouteRouletteApp.swift in Sources */,
@@ -375,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C69C9EC02AA281BC004223ED /* MockPlaceDatasource.swift in Sources */,
+				C69DD6582AA2A73F0020A928 /* DateStringFormatterTests.swift in Sources */,
 				C6FD998B2AA25C63002D211F /* MockURLSession.swift in Sources */,
 				C69C9EB32AA27CF0004223ED /* MockQueryBuilder.swift in Sources */,
 				C69C9EB52AA27F43004223ED /* APIRequestBuilderTests.swift in Sources */,
