@@ -12,14 +12,14 @@ import Combine
 final class FetchPlacesTests: XCTestCase {
 
     private var cancellables: Set<AnyCancellable>!
-    private var useCase: FetchPlaces!
+    private var useCase: FetchPlaces.Default!
     private var mockRepository: MockPlaceRepository!
 
     override func setUp() {
         super.setUp()
         cancellables = []
         mockRepository = MockPlaceRepository()
-        useCase = FetchPlaces(repository: mockRepository)
+        useCase = FetchPlaces.Default(repository: mockRepository)
     }
 
     func testSuccessfulFetch() {
@@ -35,7 +35,7 @@ final class FetchPlacesTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Fetch places successfully")
 
         // Act
-        useCase.invoke(requestValues: FetchPlaces.RequestValues(searchTerm: "test"))
+        useCase.invoke(requestValues: FetchPlacesRequestValues(searchTerm: "test"))
             .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     XCTFail("Expected success but got \(error)")
@@ -57,7 +57,7 @@ final class FetchPlacesTests: XCTestCase {
         let expectation = XCTestExpectation(description: "Fetch places fails")
 
         // Act
-        useCase.invoke(requestValues: FetchPlaces.RequestValues(searchTerm: "test"))
+        useCase.invoke(requestValues: FetchPlacesRequestValues(searchTerm: "test"))
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
@@ -80,7 +80,7 @@ final class FetchPlacesTests: XCTestCase {
         mockRepository.mockedSuccessResponse = []
 
         // Act
-        useCase.invoke(requestValues: FetchPlaces.RequestValues(searchTerm: searchTerm))
+        useCase.invoke(requestValues: FetchPlacesRequestValues(searchTerm: searchTerm))
             .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
             .store(in: &cancellables)
 

@@ -8,8 +8,13 @@
 import Foundation
 import Combine
 
-struct FetchFlights: UseCase {
-    typealias T = RequestValues
+protocol FetchFlights: UseCase {
+    typealias Default = DefaultFetchFlights
+    func invoke(requestValues: FetchFlightsRequestValues) -> AnyPublisher<[FlightDTO], Error>
+}
+
+struct DefaultFetchFlights: UseCase {
+    typealias T = FetchFlightsRequestValues
     typealias U = [FlightDTO]
     
     private let repository: FlightRepository
@@ -18,7 +23,7 @@ struct FetchFlights: UseCase {
         self.repository = repository
     }
     
-    func invoke(requestValues: RequestValues) -> AnyPublisher<[FlightDTO], Error> {
+    func invoke(requestValues: FetchFlightsRequestValues) -> AnyPublisher<[FlightDTO], Error> {
         repository.fetch(
             sourcePlaces: requestValues.sourcePlaces,
             destinationPlaces: requestValues.destinationPlaces,
@@ -30,11 +35,9 @@ struct FetchFlights: UseCase {
 
 // MARK: RequestValues
 
-extension FetchFlights {
-    struct RequestValues {
-        let sourcePlaces: [Place]
-        let destinationPlaces: [Place]?
-        let dateRangeBeginning: String
-        let dateRangeEnd: String
-    }
+struct FetchFlightsRequestValues {
+    let sourcePlaces: [Place]
+    let destinationPlaces: [Place]?
+    let dateRangeBeginning: String
+    let dateRangeEnd: String
 }

@@ -12,14 +12,14 @@ import Combine
 
 final class FetchFlightsTests: XCTestCase {
     
-    private var sut: FetchFlights!
+    private var sut: DefaultFetchFlights!
     private var mockFlightRepository: MockFlightRepository!
     private var cancellables: Set<AnyCancellable>!
     
     override func setUp() {
         super.setUp()
         mockFlightRepository = MockFlightRepository()
-        sut = FetchFlights(repository: mockFlightRepository)
+        sut = DefaultFetchFlights(repository: mockFlightRepository)
         cancellables = []
     }
     
@@ -30,7 +30,7 @@ final class FetchFlightsTests: XCTestCase {
         
         mockFlightRepository.mockedResponse = mockFlightsDTOs
         
-        let requestValues = FetchFlights.RequestValues(
+        let requestValues = FetchFlightsRequestValues(
             sourcePlaces: [Place(id: "source1", legacyId: "123", name: "Place A", gps: GPSCoordinate(lat: 0.0, long: 0.0))],
             destinationPlaces: [Place(id: "dest1", legacyId: "456", name: "Place B", gps: GPSCoordinate(lat: 1.0, long: 1.0))],
             dateRangeBeginning: "2023-07-01T00:00:00",
@@ -52,7 +52,7 @@ final class FetchFlightsTests: XCTestCase {
     func testFailedFlightFetching() {
         mockFlightRepository.shouldFail = true
         
-        let requestValues = FetchFlights.RequestValues(
+        let requestValues = FetchFlightsRequestValues(
             sourcePlaces: [Place(id: "source1", legacyId: "123", name: "Place A", gps: GPSCoordinate(lat: 0.0, long: 0.0))],
             destinationPlaces: [Place(id: "dest1", legacyId: "456", name: "Place B", gps: GPSCoordinate(lat: 1.0, long: 1.0))],
             dateRangeBeginning: "2023-07-01T00:00:00",

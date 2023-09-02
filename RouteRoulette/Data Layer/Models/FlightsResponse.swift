@@ -45,14 +45,15 @@ extension FlightsResponse {
     struct Segment: Decodable, Equatable {
         let id: String
         let duration: Int
+        let source: StopDetail
+        let destination: StopDetail
+        let carrier: Carrier
     }
     
     struct Carrier: Decodable, Equatable {
         let id: String
         let name: String
         let code: String
-        let source: StopDetail
-        let destination: StopDetail
     }
     
     struct StopDetail: Decodable, Equatable {

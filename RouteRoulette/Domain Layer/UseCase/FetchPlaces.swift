@@ -8,8 +8,13 @@
 import Foundation
 import Combine
 
-struct FetchPlaces: UseCase {
-    typealias T = RequestValues
+protocol FetchPlaces: UseCase {
+    typealias Default = DefaultFetchPlaces
+    func invoke(requestValues: FetchPlacesRequestValues) -> AnyPublisher<[Place], Error>
+}
+
+struct DefaultFetchPlaces: FetchPlaces {
+    typealias T = FetchPlacesRequestValues
     typealias U = [Place]
     
     private let repository: PlaceRepository
@@ -18,15 +23,13 @@ struct FetchPlaces: UseCase {
         self.repository = repository
     }
     
-    func invoke(requestValues: RequestValues) -> AnyPublisher<[Place], Error> {
+    func invoke(requestValues: FetchPlacesRequestValues) -> AnyPublisher<[Place], Error> {
         repository.fetch(forSearchTerm: requestValues.searchTerm)
     }
 }
 
 // MARK: RequestValues
 
-extension FetchPlaces {
-    struct RequestValues {
-        let searchTerm: String?
-    }
+struct FetchPlacesRequestValues {
+    let searchTerm: String?
 }

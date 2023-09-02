@@ -35,6 +35,11 @@
 		C6BB50A12AA2239600811952 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BB50A02AA2239600811952 /* UseCase.swift */; };
 		C6BB50A32AA223B600811952 /* FetchPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BB50A22AA223B600811952 /* FetchPlaces.swift */; };
 		C6BB50A52AA224E400811952 /* PlaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BB50A42AA224E400811952 /* PlaceRepository.swift */; };
+		C6CB135D2AA39AD500CD495C /* CreateIntineraries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB135C2AA39AD500CD495C /* CreateIntineraries.swift */; };
+		C6CB135F2AA39C5000CD495C /* CreateIntinerariesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB135E2AA39C5000CD495C /* CreateIntinerariesTests.swift */; };
+		C6CB13612AA39C6E00CD495C /* MockFetchFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB13602AA39C6E00CD495C /* MockFetchFlights.swift */; };
+		C6CB13632AA39CA700CD495C /* MockFetchPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB13622AA39CA700CD495C /* MockFetchPlaces.swift */; };
+		C6CB13652AA39CC200CD495C /* MockDateStringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB13642AA39CC200CD495C /* MockDateStringFormatter.swift */; };
 		C6E6995F2AA0E80200075041 /* RouteRouletteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E6995E2AA0E80200075041 /* RouteRouletteApp.swift */; };
 		C6E699612AA0E80200075041 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E699602AA0E80200075041 /* ContentView.swift */; };
 		C6E699632AA0E80300075041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E699622AA0E80300075041 /* Assets.xcassets */; };
@@ -84,7 +89,7 @@
 		C69DD6572AA2A73F0020A928 /* DateStringFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateStringFormatterTests.swift; sourceTree = "<group>"; };
 		C69DD6592AA2A9180020A928 /* FlightRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightRepository.swift; sourceTree = "<group>"; };
 		C69DD65D2AA2A94E0020A928 /* FlightDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDatasource.swift; sourceTree = "<group>"; };
-		C69DD65F2AA2A9790020A928 /* FlightDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDTO.swift; sourceTree = "<group>"; };
+		C69DD65F2AA2A9790020A928 /* FlightDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDTO.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		C6BB50942AA21F5000811952 /* SearchTermProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTermProvider.swift; sourceTree = "<group>"; };
 		C6BB50982AA21FA200811952 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		C6BB509A2AA2209D00811952 /* GPSCoordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPSCoordinate.swift; sourceTree = "<group>"; };
@@ -92,6 +97,11 @@
 		C6BB50A02AA2239600811952 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		C6BB50A22AA223B600811952 /* FetchPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlaces.swift; sourceTree = "<group>"; };
 		C6BB50A42AA224E400811952 /* PlaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRepository.swift; sourceTree = "<group>"; };
+		C6CB135C2AA39AD500CD495C /* CreateIntineraries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIntineraries.swift; sourceTree = "<group>"; };
+		C6CB135E2AA39C5000CD495C /* CreateIntinerariesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIntinerariesTests.swift; sourceTree = "<group>"; };
+		C6CB13602AA39C6E00CD495C /* MockFetchFlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchFlights.swift; sourceTree = "<group>"; };
+		C6CB13622AA39CA700CD495C /* MockFetchPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchPlaces.swift; sourceTree = "<group>"; };
+		C6CB13642AA39CC200CD495C /* MockDateStringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDateStringFormatter.swift; sourceTree = "<group>"; };
 		C6E6995B2AA0E80200075041 /* RouteRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E6995E2AA0E80200075041 /* RouteRouletteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRouletteApp.swift; sourceTree = "<group>"; };
 		C6E699602AA0E80200075041 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -136,6 +146,7 @@
 				C6BB50A02AA2239600811952 /* UseCase.swift */,
 				C6BB50A22AA223B600811952 /* FetchPlaces.swift */,
 				C69DD6532AA2A48C0020A928 /* FetchFlights.swift */,
+				C6CB135C2AA39AD500CD495C /* CreateIntineraries.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -165,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				C69C9EC12AA28342004223ED /* QueryBuilderTests.swift */,
+				C6CB135E2AA39C5000CD495C /* CreateIntinerariesTests.swift */,
 				C69C9EC42AA2841E004223ED /* FetchPlacesTests.swift */,
 				C69DD6572AA2A73F0020A928 /* DateStringFormatterTests.swift */,
 				C6797F532AA3700E0029A4FA /* FetchFlightsTests.swift */,
@@ -273,6 +285,9 @@
 				C6797F512AA36E610029A4FA /* MockFlightDatasource.swift */,
 				C69C9EB22AA27CF0004223ED /* MockQueryBuilder.swift */,
 				C69C9EB02AA27CA4004223ED /* MockAPIRequestBuilder.swift */,
+				C6CB13602AA39C6E00CD495C /* MockFetchFlights.swift */,
+				C6CB13622AA39CA700CD495C /* MockFetchPlaces.swift */,
+				C6CB13642AA39CC200CD495C /* MockDateStringFormatter.swift */,
 				C69C9EBF2AA281BC004223ED /* MockPlaceDatasource.swift */,
 				C69C9EC62AA284BA004223ED /* MockPlaceRepository.swift */,
 				C6797F552AA3707E0029A4FA /* MockFlightRepository.swift */,
@@ -422,6 +437,7 @@
 				C6FD998D2AA25C96002D211F /* URLSessionDataTaskPublishing.swift in Sources */,
 				C6FD99862AA257A0002D211F /* GraphQLError.swift in Sources */,
 				C6BB50A52AA224E400811952 /* PlaceRepository.swift in Sources */,
+				C6CB135D2AA39AD500CD495C /* CreateIntineraries.swift in Sources */,
 				C6BB50952AA21F5000811952 /* SearchTermProvider.swift in Sources */,
 				C6E699612AA0E80200075041 /* ContentView.swift in Sources */,
 				C6E699972AA0F69B00075041 /* PlaceDatasource.swift in Sources */,
@@ -452,6 +468,7 @@
 				C69C9EC02AA281BC004223ED /* MockPlaceDatasource.swift in Sources */,
 				C69DD6582AA2A73F0020A928 /* DateStringFormatterTests.swift in Sources */,
 				C6FD998B2AA25C63002D211F /* MockURLSession.swift in Sources */,
+				C6CB135F2AA39C5000CD495C /* CreateIntinerariesTests.swift in Sources */,
 				C6797F542AA3700E0029A4FA /* FetchFlightsTests.swift in Sources */,
 				C69C9EB32AA27CF0004223ED /* MockQueryBuilder.swift in Sources */,
 				C69C9EB52AA27F43004223ED /* APIRequestBuilderTests.swift in Sources */,
@@ -460,10 +477,13 @@
 				C6FD998F2AA25E0C002D211F /* NetworkRoverTests.swift in Sources */,
 				C69C9EB12AA27CA4004223ED /* MockAPIRequestBuilder.swift in Sources */,
 				C6E699952AA0F57C00075041 /* PlaceDatasourceTests.swift in Sources */,
+				C6CB13612AA39C6E00CD495C /* MockFetchFlights.swift in Sources */,
 				C69C9EAF2AA27BE6004223ED /* MockNetworkRover.swift in Sources */,
+				C6CB13652AA39CC200CD495C /* MockDateStringFormatter.swift in Sources */,
 				C6797F562AA3707E0029A4FA /* MockFlightRepository.swift in Sources */,
 				C69C9EC22AA28342004223ED /* QueryBuilderTests.swift in Sources */,
 				C69C9EB72AA28027004223ED /* PlaceRepositoryTests.swift in Sources */,
+				C6CB13632AA39CA700CD495C /* MockFetchPlaces.swift in Sources */,
 				C6797F522AA36E610029A4FA /* MockFlightDatasource.swift in Sources */,
 				C69C9EC52AA2841E004223ED /* FetchPlacesTests.swift in Sources */,
 				C6E6998D2AA0EC0400075041 /* String+Extensions.swift in Sources */,
