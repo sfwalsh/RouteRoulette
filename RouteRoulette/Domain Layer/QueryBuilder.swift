@@ -9,7 +9,7 @@ import Foundation
 
 enum QueryType {
     case place(searchTerm: String?)
-    case flight(sourceIdentifiers: [String], destinationIdentifiers: [String], dateRangeBeginning: String, dateRangeEnd: String)
+    case flight(sourceIdentifiers: [String], destinationIdentifiers: [String]?, dateRangeBeginning: String, dateRangeEnd: String)
 }
 
 protocol QueryBuilder {
@@ -57,7 +57,7 @@ struct DefaultQueryBuilder: QueryBuilder {
     
     private func buildFlightQuery(
         sourceIdentifiers: [String],
-        destinationIdentifiers: [String],
+        destinationIdentifiers: [String]?,
         dateRangeBeginning: String,
         dateRangeEnd: String
     ) -> String {
@@ -160,7 +160,8 @@ struct DefaultQueryBuilder: QueryBuilder {
         """
     }
     
-    private func format(for items: [String]) -> String {
-        "[\"" + items.joined(separator: "\", \"") + "\"]"
+    private func format(for items: [String]?) -> String {
+        guard let items = items else { return "[]" }
+        return "[\"" + items.joined(separator: "\", \"") + "\"]"
     }
 }

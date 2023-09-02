@@ -33,7 +33,7 @@ final class PlaceDatasourceTests: XCTestCase {
         let expectedQueryString = "query: {\(searchTerm)}"
         mockQueryBuilder.returnedString = expectedQueryString
         mockAPIRequestBuilder.shouldSucceed = true
-        mockNetworkRover.shouldSucceed = true
+        mockNetworkRover.responseObject = PlacesResponse(places: .init(edges: []))
         
         let expectation = XCTestExpectation(description: "Successful fetch")
         
@@ -78,7 +78,7 @@ final class PlaceDatasourceTests: XCTestCase {
         let expectedQueryString = "query: {\(searchTerm)}"
         mockQueryBuilder.returnedString = expectedQueryString
         mockAPIRequestBuilder.shouldSucceed = true
-        mockNetworkRover.shouldSucceed = false
+        mockNetworkRover.responseObject = nil
         
         let expectation = XCTestExpectation(description: "Expecting a network rover error")
         

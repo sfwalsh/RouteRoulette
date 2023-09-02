@@ -10,11 +10,12 @@ import Combine
 @testable import RouteRoulette
 
 final class MockNetworkRover: NetworkRover {
-    var shouldSucceed = false
+    var responseObject: Decodable?
     
     func fetchGraphQLData<T>(request: URLRequest) -> AnyPublisher<T, Error> where T : Decodable {
-        if shouldSucceed {
-            return Just(PlacesResponse(places: .init(edges: [])) as! T)
+        
+        if let responseObject = responseObject {
+            return Just(responseObject as! T)
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         } else {
