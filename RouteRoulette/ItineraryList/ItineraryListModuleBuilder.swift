@@ -39,7 +39,7 @@ enum ItineraryListModuleBuilder {
             dateStringFormatter: dateStringFormatter
         )
         
-        let collection = SearchTermCollection.Default.createSouthAmerica()
+        let collection = SearchTermCollection.Default.create()
         let searchTermProvider = SearchTermProvider.Default(searchTerms: collection.searchTerms)
         
         let viewModel = ItineraryListViewModel(
