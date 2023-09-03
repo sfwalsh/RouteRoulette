@@ -15,8 +15,8 @@ struct ItineraryListItemView: View {
             VStack(alignment: .leading) {
                 HStack(alignment: .center) {
                     Text(viewModel.sourceName)
-                    Image(systemName: "airplane")
-                        .font(.system(size: 26.0, weight: .ultraLight))
+                    Image(systemName: "arrow.right")
+                        .font(.system(size: 26.0, weight: .light))
                 }
                 
                 Text(viewModel.destinationName)
@@ -59,7 +59,9 @@ struct ItineraryListItemView_Previews: PreviewProvider {
 }
 
 extension ItineraryListItemView {
-    struct ViewModel {
+    struct ViewModel: Identifiable {
+        let id: UUID
+        
         private let durationFormatter: DateComponentsFormatter = {
             let formatter = DateComponentsFormatter()
             formatter.allowedUnits = [.hour, .minute]
@@ -106,8 +108,11 @@ extension ItineraryListItemView {
             return priceFormatter.string(from: priceNumber as NSNumber)
         }
         
+        
+        // corner cutting note: Tests not implemented for this VM due to time constraints
         init(from flight: FlightDTO) {
             self.flight = flight
+            self.id = UUID()
         }
         
         private func format(forDate date: Date) -> String {
@@ -117,9 +122,9 @@ extension ItineraryListItemView {
             let dateYear = calendar.component(.year, from: date)
             let currentDateMonth = calendar.component(.month, from: Date())
             let dateMonth = calendar.component(.month, from: date)
-
+            
             let formatter = DateFormatter()
-
+            
             if dateYear == currentYear && currentDateMonth <= dateMonth {
                 formatter.dateFormat = "E, d MMM - HH:mm"
             } else {

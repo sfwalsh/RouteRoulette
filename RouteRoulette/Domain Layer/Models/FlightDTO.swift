@@ -33,7 +33,7 @@ struct FlightDTO: Equatable {
     
     init?(from itinerary: FlightsResponse.Itinerary, stringToDateFormatter: StringToDateFormatter) {
         guard let sourceSegment = itinerary.sector.sectorSegments.first,
-              let destinationSegment = itinerary.sector.sectorSegments.first else {
+              let destinationSegment = itinerary.sector.sectorSegments.last else {
             // assuming that every journey has a beginning and an end 😀
             return nil
         }
@@ -44,8 +44,16 @@ struct FlightDTO: Equatable {
         
         self.stopCount = max(0, itinerary.sector.sectorSegments.count - 2) // subtracting two to account for the source and destination segments
         
-        self.sourceName = sourceSegment.segment.source.station.name
-        self.destinationName = destinationSegment.segment.destination.station.name
+        let sourceCity = sourceSegment.segment.source.station.city
+        let sourceCountry = sourceSegment.segment.source.station.city.country
+        // corner cutting note: localisation should determine how this string is formatted
+        self.sourceName = "\(sourceCity.name), \(sourceCountry.name)"
+        
+        
+        let destinationCity = destinationSegment.segment.destination.station.city
+        let destinationCountry = destinationSegment.segment.destination.station.city.country
+        // corner cutting note: localisation should determine how this string is formatted
+        self.destinationName = "\(destinationCity.name), \(destinationCountry.name)"
         
         self.departureDate = stringToDateFormatter
             .format(forDateString: sourceSegment.segment.source.localTime) ?? Date()

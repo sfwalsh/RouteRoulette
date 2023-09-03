@@ -18,12 +18,17 @@ struct ItineraryListView: View {
     var body: some View {
         VStack {
             ZStack {
-                List(1..<100) { row in
-                    Text("Row \(row)")
+                ScrollView {
+                    LazyVStack(alignment: .leading, spacing: 12) {
+                        ForEach(viewModel.items) { item in
+                            ItineraryListItemView(viewModel: item)
+                        }
+                    }
+                    .refreshable {
+                        viewModel.onAppear()
+                    }
                 }
-                .refreshable {
-                    viewModel.onAppear()
-                }
+                
                 if viewModel.loadingIndicatorActive {
                     ActivityIndicatorView()
                         .frame(width: 20, height: 20)
@@ -32,7 +37,7 @@ struct ItineraryListView: View {
             
         }.onAppear {
             viewModel.onAppear()
-        }
+        }.navigationTitle(viewModel.title)
     }
 }
 

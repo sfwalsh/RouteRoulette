@@ -13,13 +13,13 @@ final class ItineraryListViewModel: ObservableObject {
     // Published Properties
     @Published var title: String
     @Published var loadingIndicatorActive: Bool
+    @Published var items: [ItineraryListItemView.ViewModel]
     
     private var cancellables = Set<AnyCancellable>()
     
     // Use Cases
     
     private let createItineraries: any CreateIntineraries
-    
     private let searchTermProvider: any SearchTermProvider
     
     init(
@@ -27,13 +27,15 @@ final class ItineraryListViewModel: ObservableObject {
         loadingIndicatorActive: Bool = true,
         cancellables: Set<AnyCancellable> = Set<AnyCancellable>(),
         createItineraries: any CreateIntineraries,
-        searchTermProvider: any SearchTermProvider
+        searchTermProvider: any SearchTermProvider,
+        items: [ItineraryListItemView.ViewModel] = []
     ) {
         self.title = title
         self.loadingIndicatorActive = loadingIndicatorActive
         self.cancellables = cancellables
         self.createItineraries = createItineraries
         self.searchTermProvider = searchTermProvider
+        self.items = items
     }
     
     func onAppear() {
@@ -62,7 +64,7 @@ extension ItineraryListViewModel{
                     print("error: \(error)")
                 }
             } receiveValue: { [weak self] itineraries in
-                
+                self?.items = itineraries.map { ItineraryListItemView.ViewModel(from: $0) }
             }
             .store(in: &cancellables)
     }
