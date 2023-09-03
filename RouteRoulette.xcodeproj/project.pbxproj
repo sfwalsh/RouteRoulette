@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C670A04A2AA4CF1400B9AF8D /* FlightDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C670A0492AA4CF1400B9AF8D /* FlightDTOTests.swift */; };
 		C6797F4B2AA365B60029A4FA /* FlightsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6797F4A2AA365B60029A4FA /* FlightsResponse.swift */; };
 		C6797F4E2AA36C180029A4FA /* FlightDatasourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6797F4D2AA36C180029A4FA /* FlightDatasourceTests.swift */; };
 		C6797F502AA36DE10029A4FA /* FlightRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6797F4F2AA36DE10029A4FA /* FlightRepositoryTests.swift */; };
@@ -69,6 +70,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C670A0492AA4CF1400B9AF8D /* FlightDTOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDTOTests.swift; sourceTree = "<group>"; };
 		C6797F4A2AA365B60029A4FA /* FlightsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsResponse.swift; sourceTree = "<group>"; };
 		C6797F4D2AA36C180029A4FA /* FlightDatasourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDatasourceTests.swift; sourceTree = "<group>"; };
 		C6797F4F2AA36DE10029A4FA /* FlightRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightRepositoryTests.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				C69C9EC12AA28342004223ED /* QueryBuilderTests.swift */,
+				C670A0492AA4CF1400B9AF8D /* FlightDTOTests.swift */,
 				C6CB135E2AA39C5000CD495C /* CreateIntinerariesTests.swift */,
 				C69C9EC42AA2841E004223ED /* FetchPlacesTests.swift */,
 				C69DD6572AA2A73F0020A928 /* DateStringFormatterTests.swift */,
@@ -471,6 +474,7 @@
 				C6CB135F2AA39C5000CD495C /* CreateIntinerariesTests.swift in Sources */,
 				C6797F542AA3700E0029A4FA /* FetchFlightsTests.swift in Sources */,
 				C69C9EB32AA27CF0004223ED /* MockQueryBuilder.swift in Sources */,
+				C670A04A2AA4CF1400B9AF8D /* FlightDTOTests.swift in Sources */,
 				C69C9EB52AA27F43004223ED /* APIRequestBuilderTests.swift in Sources */,
 				C69C9EC72AA284BA004223ED /* MockPlaceRepository.swift in Sources */,
 				C6797F502AA36DE10029A4FA /* FlightRepositoryTests.swift in Sources */,
