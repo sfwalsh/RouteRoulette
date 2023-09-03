@@ -42,8 +42,8 @@ struct DefaultCreateIntineraries: CreateIntineraries {
         return fetchPlaces.invoke(requestValues: .init(searchTerm: requestValues.searchTerm))
             .flatMap { places in
                 self.fetchFlights.invoke(requestValues: .init(
-                    sourcePlaces: places,
-                    destinationPlaces: nil, // corner cutting note; destinationPlaces has been left blank for this destination, to get the most possible results
+                    sourcePlaces: places, // corner cutting note; sourcePlaces could be set based on user's current location
+                    destinationPlaces: places,
                     dateRangeBeginning: dateRangeBeginning,
                     dateRangeEnd: dateRangeEnd)
                 )
