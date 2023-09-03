@@ -43,6 +43,8 @@
 		C6BB50A52AA224E400811952 /* PlaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BB50A42AA224E400811952 /* PlaceRepository.swift */; };
 		C6BC2FC62AA4DBCC00266D1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6BC2FC52AA4DBCC00266D1F /* Localizable.strings */; };
 		C6BC2FC82AA4DDFD00266D1F /* ItineraryListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC2FC72AA4DDFD00266D1F /* ItineraryListModuleBuilder.swift */; };
+		C6BC2FCA2AA4EACA00266D1F /* ItineraryListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC2FC92AA4EACA00266D1F /* ItineraryListItemView.swift */; };
+		C6BC2FCC2AA546E300266D1F /* StringToDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC2FCB2AA546E300266D1F /* StringToDateFormatter.swift */; };
 		C6CB135D2AA39AD500CD495C /* CreateIntineraries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB135C2AA39AD500CD495C /* CreateIntineraries.swift */; };
 		C6CB135F2AA39C5000CD495C /* CreateIntinerariesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB135E2AA39C5000CD495C /* CreateIntinerariesTests.swift */; };
 		C6CB13612AA39C6E00CD495C /* MockFetchFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB13602AA39C6E00CD495C /* MockFetchFlights.swift */; };
@@ -113,6 +115,8 @@
 		C6BB50A42AA224E400811952 /* PlaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRepository.swift; sourceTree = "<group>"; };
 		C6BC2FC52AA4DBCC00266D1F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		C6BC2FC72AA4DDFD00266D1F /* ItineraryListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryListModuleBuilder.swift; sourceTree = "<group>"; };
+		C6BC2FC92AA4EACA00266D1F /* ItineraryListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryListItemView.swift; sourceTree = "<group>"; };
+		C6BC2FCB2AA546E300266D1F /* StringToDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringToDateFormatter.swift; sourceTree = "<group>"; };
 		C6CB135C2AA39AD500CD495C /* CreateIntineraries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIntineraries.swift; sourceTree = "<group>"; };
 		C6CB135E2AA39C5000CD495C /* CreateIntinerariesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIntinerariesTests.swift; sourceTree = "<group>"; };
 		C6CB13602AA39C6E00CD495C /* MockFetchFlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchFlights.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 			children = (
 				C6E699602AA0E80200075041 /* ItineraryListView.swift */,
 				C670A0502AA4D64B00B9AF8D /* ItineraryListViewModel.swift */,
+				C6BC2FC92AA4EACA00266D1F /* ItineraryListItemView.swift */,
 				C6BC2FC72AA4DDFD00266D1F /* ItineraryListModuleBuilder.swift */,
 			);
 			path = ItineraryList;
@@ -359,6 +364,7 @@
 				C670A04C2AA4D41700B9AF8D /* SearchTermCollections.swift */,
 				C6FD997E2AA25352002D211F /* QueryBuilder.swift */,
 				C69DD6552AA2A4A10020A928 /* DateStringFormatter.swift */,
+				C6BC2FCB2AA546E300266D1F /* StringToDateFormatter.swift */,
 			);
 			path = "Domain Layer";
 			sourceTree = "<group>";
@@ -497,6 +503,7 @@
 				C69DD6602AA2A9790020A928 /* FlightDTO.swift in Sources */,
 				C6BB50A32AA223B600811952 /* FetchPlaces.swift in Sources */,
 				C6FD997F2AA25352002D211F /* QueryBuilder.swift in Sources */,
+				C6BC2FCA2AA4EACA00266D1F /* ItineraryListItemView.swift in Sources */,
 				C6FD99832AA25788002D211F /* NetworkRoverError.swift in Sources */,
 				C6797F4B2AA365B60029A4FA /* FlightsResponse.swift in Sources */,
 				C6BB50992AA21FA200811952 /* Place.swift in Sources */,
@@ -510,6 +517,7 @@
 				C6BB509B2AA2209D00811952 /* GPSCoordinate.swift in Sources */,
 				C6FD99892AA257CD002D211F /* APIRequestBuilder.swift in Sources */,
 				C6E6995F2AA0E80200075041 /* RouteRouletteApp.swift in Sources */,
+				C6BC2FCC2AA546E300266D1F /* StringToDateFormatter.swift in Sources */,
 				C670A0562AA4D9AF00B9AF8D /* Palette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,6 +26,7 @@ struct DefaultSearchTermProvider: SearchTermProvider {
     
     func generate() -> String {
         let dayNumber = dayNumberOfTheYear() ?? 0
+        guard searchTerms.count > 0 else { return "" }
         // The modulo operator ensures the chosen index is within the bounds of the search terms collection
         let index = dayNumber % searchTerms.count
         return searchTerms[index]

@@ -45,21 +45,20 @@ final class CreateIntinerariesTests: XCTestCase {
             gps: .init(lat: 1, long: 2)
         )
         let mockFlight = FlightDTO(
-            from: .init(
-                id: .randomAlphanumeric(of: 2),
-                duration: 2,
-                priceEur: .init(amount: .randomAlphanumeric(of: 2)),
-                sector: .init(id: .randomAlphanumeric(of: 2),
-                              duration: 2,
-                              sectorSegments: [])
-            )
+            id: String.randomAlphanumeric(of: 2),
+            totalDuration: 12345,
+            priceEur: "26",
+            stopCount: 1,
+            sourceName: "Toronto",
+            destinationName: "USA",
+            departureDate: .now
         )
+        
         mockFetchPlaces.result = .success(
             [
                 mockPlace
             ]
         )
-        
         
         mockFetchFlights.result = .success(
             [

@@ -25,8 +25,8 @@ final class FetchFlightsTests: XCTestCase {
     
     func testSuccessfulFlightFetching() {
         let mockFlightsDTOs = [
-            FlightDTO(from: .init(id: "", duration: 1, priceEur: .init(amount: ""), sector: .init(id: "", duration: 1, sectorSegments: [])))
-        ]
+            FlightDTO(from: .init(id: "", duration: 1, priceEur: .init(amount: ""), sector: .init(id: "", duration: 1, sectorSegments: [])), stringToDateFormatter: .Default(formatter: .init()))
+        ].compactMap { $0 }
         
         mockFlightRepository.mockedResponse = mockFlightsDTOs
         

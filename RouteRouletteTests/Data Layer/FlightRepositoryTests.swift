@@ -19,7 +19,9 @@ final class FlightRepositoryTests: XCTestCase {
     override func setUp() {
         super.setUp()
         mockFlightDatasource = MockFlightDatasource()
-        sut = DefaultFlightRepository(remoteDatasource: mockFlightDatasource)
+        sut = DefaultFlightRepository(
+            remoteDatasource: mockFlightDatasource, stringToDateFormatter: .Default(formatter: .init())
+        )
         cancellables = []
     }
     
@@ -33,7 +35,7 @@ final class FlightRepositoryTests: XCTestCase {
             )
         ]
         
-        let expectedDTOs = mockFlights.map { FlightDTO(from: $0) }
+        let expectedDTOs = mockFlights.compactMap { FlightDTO(from: $0, stringToDateFormatter: .Default(formatter: .init())) }
         
         mockFlightDatasource.mockedResponse = FlightsResponse(onewayItineraries: FlightsResponse.OnewayItineraries(itineraries: mockFlights))
         

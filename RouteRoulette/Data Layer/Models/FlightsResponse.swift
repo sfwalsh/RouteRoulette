@@ -51,14 +51,11 @@ extension FlightsResponse {
     }
     
     struct Carrier: Decodable, Equatable {
-        let id: String
-        let name: String
-        let code: String
+        let id, name, code: String
     }
     
     struct StopDetail: Decodable, Equatable {
-        let utcTime: String
-        let localTime: String
+        let utcTime, localTime: String
         let station: Station
     }
     
@@ -68,13 +65,11 @@ extension FlightsResponse {
     }
     
     struct City: Decodable, Equatable {
-        let id, legacyId: String
-        let name: String
+        let id, legacyId, name: String
         let country: Country
     }
     
     struct Country: Decodable, Equatable {
         let id, name: String
     }
-    
 }

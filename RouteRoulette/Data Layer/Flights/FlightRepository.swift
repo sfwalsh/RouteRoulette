@@ -22,9 +22,11 @@ struct DefaultFlightRepository: FlightRepository {
     
     // Corner Cutting Note: Normally would cache the results from `remoteDatasource` to a localDatasource to minimise network calls
     private let remoteDatasource: FlightDatasource
+    private let stringToDateFormatter: StringToDateFormatter
     
-    init(remoteDatasource: FlightDatasource) {
+    init(remoteDatasource: FlightDatasource, stringToDateFormatter: StringToDateFormatter) {
         self.remoteDatasource = remoteDatasource
+        self.stringToDateFormatter = stringToDateFormatter
     }
     
     func fetch(
@@ -41,7 +43,10 @@ struct DefaultFlightRepository: FlightRepository {
                 dateRangeEnd: dateRangeEnd
             )
             .map { response in
-                response.onewayItineraries.itineraries.map { FlightDTO(from: $0) }
+                response.onewayItineraries.itineraries.compactMap { FlightDTO(
+                    from: $0,
+                    stringToDateFormatter: stringToDateFormatter
+                ) }
             }
             .eraseToAnyPublisher()
     }

@@ -20,16 +20,21 @@ final class ItineraryListViewModel: ObservableObject {
     
     private let createItineraries: any CreateIntineraries
     
+    private let searchTermProvider: any SearchTermProvider
+    
     init(
         title: String = String(localized: "itineraryViewTitleName"),
         loadingIndicatorActive: Bool = true,
         cancellables: Set<AnyCancellable> = Set<AnyCancellable>(),
-        createItineraries: any CreateIntineraries) {
-            self.title = title
-            self.loadingIndicatorActive = loadingIndicatorActive
-            self.cancellables = cancellables
-            self.createItineraries = createItineraries
-        }
+        createItineraries: any CreateIntineraries,
+        searchTermProvider: any SearchTermProvider
+    ) {
+        self.title = title
+        self.loadingIndicatorActive = loadingIndicatorActive
+        self.cancellables = cancellables
+        self.createItineraries = createItineraries
+        self.searchTermProvider = searchTermProvider
+    }
     
     func onAppear() {
         fetchItineraries()
@@ -42,7 +47,8 @@ extension ItineraryListViewModel{
     private func fetchItineraries() {
         loadingIndicatorActive = true
         
-        createItineraries.invoke(requestValues: .init(searchTerm: nil))
+        let searchTerm = searchTermProvider.generate()
+        createItineraries.invoke(requestValues: .init(searchTerm: searchTerm))
             .receive(on: RunLoop.main)
             .sink { [weak self] completion in
                 defer { self?.loadingIndicatorActive = false }

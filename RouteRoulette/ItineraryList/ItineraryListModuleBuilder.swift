@@ -20,7 +20,10 @@ enum ItineraryListModuleBuilder {
             queryBuilder: queryBuilder,
             apiRequestBuilder: apiRequestBuilder
         )
-        let flightRepository = FlightRepository.Default(remoteDatasource: flightDatasource)
+        let flightRepository = FlightRepository.Default(
+            remoteDatasource: flightDatasource,
+            stringToDateFormatter: StringToDateFormatter.Default(formatter: .init())
+        )
         
         let placeDatasource = PlaceDatasource.Default(
             networkRover: networkRover,
@@ -36,7 +39,13 @@ enum ItineraryListModuleBuilder {
             dateStringFormatter: dateStringFormatter
         )
         
-        let viewModel = ItineraryListViewModel(createItineraries: createItineraries)
+        let collection = SearchTermCollection.Default.createSouthAmerica()
+        let searchTermProvider = SearchTermProvider.Default(searchTerms: collection.searchTerms)
+        
+        let viewModel = ItineraryListViewModel(
+            createItineraries: createItineraries,
+            searchTermProvider: searchTermProvider
+        )
         return ItineraryListView(viewModel: viewModel)
     }
 }
