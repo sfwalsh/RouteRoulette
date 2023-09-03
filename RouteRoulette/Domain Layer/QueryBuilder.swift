@@ -64,104 +64,66 @@ struct DefaultQueryBuilder: QueryBuilder {
         // corner cutting: similar to above
         let formattedSourceIdentifiers = format(for: sourceIdentifiers)
         let formattedDestinationIdentifiers = format(for: destinationIdentifiers)
-        
+        let limit: Int = 5
         return """
         fragment stopDetails on Stop {
           utcTime
           localTime
-          station {
-            id
-            name
-            code
-            type
-            city {
-              id
-              legacyId
-              name
-              country {
-                id
-                name
-              }
-            }
-          }
+          station { id name code type city { id legacyId name country { id name } } }
         }
-        
         query onewayItineraries {
           onewayItineraries(
-            filter: {allowChangeInboundSource: false, allowChangeInboundDestination: false, allowDifferentStationConnection: true, allowOvernightStopover: true, contentProviders: [KIWI], limit: 10, showNoCheckedBags: true, transportTypes: [FLIGHT]}
-            options: {currency: "EUR", partner: "skypicker", sortBy: QUALITY, sortOrder: ASCENDING, sortVersion: 4, storeSearch: true}
-            search: {cabinClass: {applyMixedClasses: true, cabinClass: ECONOMY}, itinerary: {source: {ids: \(formattedSourceIdentifiers)}, destination: {ids: \(formattedDestinationIdentifiers)}, outboundDepartureDate: {start: \(dateRangeBeginning), end: \(dateRangeEnd)}}, passengers: {adults: 1, adultsHandBags: [1], adultsHoldBags: [0]}}
-          ) {
-            ... on Itineraries {
+            filter: {
+              allowChangeInboundSource: false, allowChangeInboundDestination: false,
+              allowDifferentStationConnection: true, allowOvernightStopover: true,
+              contentProviders: [KIWI], limit: \(limit), showNoCheckedBags: true,
+              transportTypes: [FLIGHT]
+            }, options: {
+              currency: "EUR", partner: "skypicker", sortBy: QUALITY,
+              sortOrder: ASCENDING, sortVersion: 4, storeSearch: true
+            }, search: {
+              cabinClass: { applyMixedClasses: true, cabinClass: ECONOMY },
+              itinerary: {
+                source: { ids: [\(formattedSourceIdentifiers)] },
+                destination: { ids: [\(formattedDestinationIdentifiers)] },
+                outboundDepartureDate: {
+                  start: "\(dateRangeBeginning)",
+                  end: "\(dateRangeEnd)"
+        } },
+              passengers: { adults: 1, adultsHandBags: [1], adultsHoldBags: [0] }
+            }
+        ){
+        ... on Itineraries {
               itineraries {
                 ... on ItineraryOneWay {
-                  id
-                  duration
-                  cabinClasses
-                  priceEur {
-                    amount
-                  }
+                  id duration cabinClasses priceEur { amount }
                   bookingOptions {
-                    edges {
-                      node {
-                        bookingUrl
-                        price {
-                          amount
-                          formattedValue
-                        }
-                      }
+        edges {
+                      node { bookingUrl price { amount formattedValue } }
                     }
                   }
-                  provider {
-                    id
-                    name
-                    code
-                  }
+                  provider { id name code }
                   sector {
-                    id
-                    duration
+                    id duration
                     sectorSegments {
                       segment {
-                        id
-                        duration
-                        type
-                        code
-                        source {
-                          ...stopDetails
-                        }
-                        destination {
-                          ...stopDetails
-                        }
-                        carrier {
-                          id
-                          name
-                          code
-                        }
-                        operatingCarrier {
-                          id
-                          name
-                          code
-                        }
+                        id duration type code
+                        source { ...stopDetails }
+                        destination { ...stopDetails }
+                        carrier { id name code }
+                        operatingCarrier { id name code }
                       }
-                      layover {
-                        duration
-                        isBaggageRecheck
-                        transferDuration
-                        transferType
-                      }
+                      layover { duration isBaggageRecheck transferDuration transferType }
                       guarantee
-                    }
-                  }
-                }
-              }
-            }
-          }
+        } }
+        } }
+        } }
         }
         """
     }
     
     private func format(for items: [String]?) -> String {
-        guard let items = items else { return "[]" }
-        return "[\"" + items.joined(separator: "\", \"") + "\"]"
+        guard let items = items else { return "" }
+        return items.map { "\"\($0)\"" }.joined(separator: ", ")
     }
 }

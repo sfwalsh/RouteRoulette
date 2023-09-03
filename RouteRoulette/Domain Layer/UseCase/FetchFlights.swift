@@ -13,7 +13,7 @@ protocol FetchFlights: UseCase {
     func invoke(requestValues: FetchFlightsRequestValues) -> AnyPublisher<[FlightDTO], Error>
 }
 
-struct DefaultFetchFlights: UseCase {
+struct DefaultFetchFlights: FetchFlights {
     typealias T = FetchFlightsRequestValues
     typealias U = [FlightDTO]
     

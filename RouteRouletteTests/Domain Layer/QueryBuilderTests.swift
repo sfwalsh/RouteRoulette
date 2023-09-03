@@ -43,7 +43,7 @@ final class QueryBuilderTests: XCTestCase {
         XCTAssertTrue(generatedQuery.contains("onewayItineraries("))
         XCTAssertTrue(generatedQuery.contains("ids: [\"ID1\", \"ID2\"]"))
         XCTAssertTrue(generatedQuery.contains("ids: [\"DEST1\", \"DEST2\"]"))
-        XCTAssertTrue(generatedQuery.contains("start: \(startDate)"))
-        XCTAssertTrue(generatedQuery.contains("end: \(endDate)"))
+        XCTAssertTrue(generatedQuery.contains("start: \"\(startDate)\""))
+        XCTAssertTrue(generatedQuery.contains("end: \"\(endDate)\""))
     }
 }

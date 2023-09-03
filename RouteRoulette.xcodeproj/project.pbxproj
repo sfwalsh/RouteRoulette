@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		C670A04A2AA4CF1400B9AF8D /* FlightDTOTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C670A0492AA4CF1400B9AF8D /* FlightDTOTests.swift */; };
+		C670A04D2AA4D41700B9AF8D /* SearchTermCollections.swift in Sources */ = {isa = PBXBuildFile; fileRef = C670A04C2AA4D41700B9AF8D /* SearchTermCollections.swift */; };
+		C670A04F2AA4D5B900B9AF8D /* SearchTermProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C670A04E2AA4D5B900B9AF8D /* SearchTermProviderTests.swift */; };
+		C670A0512AA4D64B00B9AF8D /* ItineraryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C670A0502AA4D64B00B9AF8D /* ItineraryListViewModel.swift */; };
+		C670A0542AA4D97700B9AF8D /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C670A0532AA4D97700B9AF8D /* ActivityIndicatorView.swift */; };
+		C670A0562AA4D9AF00B9AF8D /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = C670A0552AA4D9AF00B9AF8D /* Palette.swift */; };
 		C6797F4B2AA365B60029A4FA /* FlightsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6797F4A2AA365B60029A4FA /* FlightsResponse.swift */; };
 		C6797F4E2AA36C180029A4FA /* FlightDatasourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6797F4D2AA36C180029A4FA /* FlightDatasourceTests.swift */; };
 		C6797F502AA36DE10029A4FA /* FlightRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6797F4F2AA36DE10029A4FA /* FlightRepositoryTests.swift */; };
@@ -36,13 +41,15 @@
 		C6BB50A12AA2239600811952 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BB50A02AA2239600811952 /* UseCase.swift */; };
 		C6BB50A32AA223B600811952 /* FetchPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BB50A22AA223B600811952 /* FetchPlaces.swift */; };
 		C6BB50A52AA224E400811952 /* PlaceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BB50A42AA224E400811952 /* PlaceRepository.swift */; };
+		C6BC2FC62AA4DBCC00266D1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6BC2FC52AA4DBCC00266D1F /* Localizable.strings */; };
+		C6BC2FC82AA4DDFD00266D1F /* ItineraryListModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6BC2FC72AA4DDFD00266D1F /* ItineraryListModuleBuilder.swift */; };
 		C6CB135D2AA39AD500CD495C /* CreateIntineraries.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB135C2AA39AD500CD495C /* CreateIntineraries.swift */; };
 		C6CB135F2AA39C5000CD495C /* CreateIntinerariesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB135E2AA39C5000CD495C /* CreateIntinerariesTests.swift */; };
 		C6CB13612AA39C6E00CD495C /* MockFetchFlights.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB13602AA39C6E00CD495C /* MockFetchFlights.swift */; };
 		C6CB13632AA39CA700CD495C /* MockFetchPlaces.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB13622AA39CA700CD495C /* MockFetchPlaces.swift */; };
 		C6CB13652AA39CC200CD495C /* MockDateStringFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CB13642AA39CC200CD495C /* MockDateStringFormatter.swift */; };
 		C6E6995F2AA0E80200075041 /* RouteRouletteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E6995E2AA0E80200075041 /* RouteRouletteApp.swift */; };
-		C6E699612AA0E80200075041 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E699602AA0E80200075041 /* ContentView.swift */; };
+		C6E699612AA0E80200075041 /* ItineraryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E699602AA0E80200075041 /* ItineraryListView.swift */; };
 		C6E699632AA0E80300075041 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E699622AA0E80300075041 /* Assets.xcassets */; };
 		C6E699662AA0E80300075041 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6E699652AA0E80300075041 /* Preview Assets.xcassets */; };
 		C6E6998B2AA0E93600075041 /* NetworkRover.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6E6998A2AA0E93600075041 /* NetworkRover.swift */; };
@@ -71,6 +78,11 @@
 
 /* Begin PBXFileReference section */
 		C670A0492AA4CF1400B9AF8D /* FlightDTOTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDTOTests.swift; sourceTree = "<group>"; };
+		C670A04C2AA4D41700B9AF8D /* SearchTermCollections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTermCollections.swift; sourceTree = "<group>"; };
+		C670A04E2AA4D5B900B9AF8D /* SearchTermProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTermProviderTests.swift; sourceTree = "<group>"; };
+		C670A0502AA4D64B00B9AF8D /* ItineraryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryListViewModel.swift; sourceTree = "<group>"; };
+		C670A0532AA4D97700B9AF8D /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		C670A0552AA4D9AF00B9AF8D /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		C6797F4A2AA365B60029A4FA /* FlightsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsResponse.swift; sourceTree = "<group>"; };
 		C6797F4D2AA36C180029A4FA /* FlightDatasourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightDatasourceTests.swift; sourceTree = "<group>"; };
 		C6797F4F2AA36DE10029A4FA /* FlightRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightRepositoryTests.swift; sourceTree = "<group>"; };
@@ -99,6 +111,8 @@
 		C6BB50A02AA2239600811952 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		C6BB50A22AA223B600811952 /* FetchPlaces.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlaces.swift; sourceTree = "<group>"; };
 		C6BB50A42AA224E400811952 /* PlaceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceRepository.swift; sourceTree = "<group>"; };
+		C6BC2FC52AA4DBCC00266D1F /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		C6BC2FC72AA4DDFD00266D1F /* ItineraryListModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryListModuleBuilder.swift; sourceTree = "<group>"; };
 		C6CB135C2AA39AD500CD495C /* CreateIntineraries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIntineraries.swift; sourceTree = "<group>"; };
 		C6CB135E2AA39C5000CD495C /* CreateIntinerariesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateIntinerariesTests.swift; sourceTree = "<group>"; };
 		C6CB13602AA39C6E00CD495C /* MockFetchFlights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFetchFlights.swift; sourceTree = "<group>"; };
@@ -106,7 +120,7 @@
 		C6CB13642AA39CC200CD495C /* MockDateStringFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDateStringFormatter.swift; sourceTree = "<group>"; };
 		C6E6995B2AA0E80200075041 /* RouteRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouteRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6E6995E2AA0E80200075041 /* RouteRouletteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteRouletteApp.swift; sourceTree = "<group>"; };
-		C6E699602AA0E80200075041 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C6E699602AA0E80200075041 /* ItineraryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryListView.swift; sourceTree = "<group>"; };
 		C6E699622AA0E80300075041 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6E699652AA0E80300075041 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C6E6996B2AA0E80300075041 /* RouteRouletteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouteRouletteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +156,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C670A04B2AA4CFED00B9AF8D /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C6FD998C2AA25C96002D211F /* URLSessionDataTaskPublishing.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C670A0522AA4D64E00B9AF8D /* ItineraryList */ = {
+			isa = PBXGroup;
+			children = (
+				C6E699602AA0E80200075041 /* ItineraryListView.swift */,
+				C670A0502AA4D64B00B9AF8D /* ItineraryListViewModel.swift */,
+				C6BC2FC72AA4DDFD00266D1F /* ItineraryListModuleBuilder.swift */,
+			);
+			path = ItineraryList;
+			sourceTree = "<group>";
+		};
 		C6797F492AA3646E0029A4FA /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				C69C9EC12AA28342004223ED /* QueryBuilderTests.swift */,
+				C670A04E2AA4D5B900B9AF8D /* SearchTermProviderTests.swift */,
 				C670A0492AA4CF1400B9AF8D /* FlightDTOTests.swift */,
 				C6CB135E2AA39C5000CD495C /* CreateIntinerariesTests.swift */,
 				C69C9EC42AA2841E004223ED /* FetchPlacesTests.swift */,
@@ -229,6 +262,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		C6BC2FC42AA4DB2900266D1F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C670A0532AA4D97700B9AF8D /* ActivityIndicatorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		C6E699522AA0E80200075041 = {
 			isa = PBXGroup;
 			children = (
@@ -251,11 +292,14 @@
 			isa = PBXGroup;
 			children = (
 				C6E6995E2AA0E80200075041 /* RouteRouletteApp.swift */,
-				C6E699602AA0E80200075041 /* ContentView.swift */,
-				C6FD998C2AA25C96002D211F /* URLSessionDataTaskPublishing.swift */,
+				C6BC2FC42AA4DB2900266D1F /* Views */,
+				C670A0552AA4D9AF00B9AF8D /* Palette.swift */,
+				C670A0522AA4D64E00B9AF8D /* ItineraryList */,
+				C670A04B2AA4CFED00B9AF8D /* Protocols */,
 				C6FD997D2AA25157002D211F /* Domain Layer */,
 				C6BB509C2AA220AB00811952 /* Data Layer */,
 				C6E699622AA0E80300075041 /* Assets.xcassets */,
+				C6BC2FC52AA4DBCC00266D1F /* Localizable.strings */,
 				C6E699642AA0E80300075041 /* Preview Content */,
 			);
 			path = RouteRoulette;
@@ -312,6 +356,7 @@
 				C6797F492AA3646E0029A4FA /* UseCase */,
 				C6797F4C2AA369B90029A4FA /* Models */,
 				C6BB50942AA21F5000811952 /* SearchTermProvider.swift */,
+				C670A04C2AA4D41700B9AF8D /* SearchTermCollections.swift */,
 				C6FD997E2AA25352002D211F /* QueryBuilder.swift */,
 				C69DD6552AA2A4A10020A928 /* DateStringFormatter.swift */,
 			);
@@ -418,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6E699662AA0E80300075041 /* Preview Assets.xcassets in Resources */,
+				C6BC2FC62AA4DBCC00266D1F /* Localizable.strings in Resources */,
 				C6E699632AA0E80300075041 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,13 +482,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C670A04D2AA4D41700B9AF8D /* SearchTermCollections.swift in Sources */,
+				C6BC2FC82AA4DDFD00266D1F /* ItineraryListModuleBuilder.swift in Sources */,
 				C6FD99812AA2576E002D211F /* GraphQLResponse.swift in Sources */,
 				C6FD998D2AA25C96002D211F /* URLSessionDataTaskPublishing.swift in Sources */,
 				C6FD99862AA257A0002D211F /* GraphQLError.swift in Sources */,
 				C6BB50A52AA224E400811952 /* PlaceRepository.swift in Sources */,
 				C6CB135D2AA39AD500CD495C /* CreateIntineraries.swift in Sources */,
 				C6BB50952AA21F5000811952 /* SearchTermProvider.swift in Sources */,
-				C6E699612AA0E80200075041 /* ContentView.swift in Sources */,
+				C6E699612AA0E80200075041 /* ItineraryListView.swift in Sources */,
 				C6E699972AA0F69B00075041 /* PlaceDatasource.swift in Sources */,
 				C6BB509F2AA220C500811952 /* PlacesResponse.swift in Sources */,
 				C69DD6562AA2A4A10020A928 /* DateStringFormatter.swift in Sources */,
@@ -453,13 +501,16 @@
 				C6797F4B2AA365B60029A4FA /* FlightsResponse.swift in Sources */,
 				C6BB50992AA21FA200811952 /* Place.swift in Sources */,
 				C6E6998B2AA0E93600075041 /* NetworkRover.swift in Sources */,
+				C670A0512AA4D64B00B9AF8D /* ItineraryListViewModel.swift in Sources */,
 				C6BB50A12AA2239600811952 /* UseCase.swift in Sources */,
 				C69DD65A2AA2A9180020A928 /* FlightRepository.swift in Sources */,
+				C670A0542AA4D97700B9AF8D /* ActivityIndicatorView.swift in Sources */,
 				C69DD6542AA2A48C0020A928 /* FetchFlights.swift in Sources */,
 				C69DD65E2AA2A94E0020A928 /* FlightDatasource.swift in Sources */,
 				C6BB509B2AA2209D00811952 /* GPSCoordinate.swift in Sources */,
 				C6FD99892AA257CD002D211F /* APIRequestBuilder.swift in Sources */,
 				C6E6995F2AA0E80200075041 /* RouteRouletteApp.swift in Sources */,
+				C670A0562AA4D9AF00B9AF8D /* Palette.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +531,7 @@
 				C6797F502AA36DE10029A4FA /* FlightRepositoryTests.swift in Sources */,
 				C6FD998F2AA25E0C002D211F /* NetworkRoverTests.swift in Sources */,
 				C69C9EB12AA27CA4004223ED /* MockAPIRequestBuilder.swift in Sources */,
+				C670A04F2AA4D5B900B9AF8D /* SearchTermProviderTests.swift in Sources */,
 				C6E699952AA0F57C00075041 /* PlaceDatasourceTests.swift in Sources */,
 				C6CB13612AA39C6E00CD495C /* MockFetchFlights.swift in Sources */,
 				C69C9EAF2AA27BE6004223ED /* MockNetworkRover.swift in Sources */,

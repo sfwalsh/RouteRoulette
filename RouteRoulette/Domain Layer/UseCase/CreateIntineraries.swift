@@ -8,8 +8,14 @@
 import Foundation
 import Combine
 
-struct CreateIntineraries: UseCase {
-    typealias T = RequestValues
+
+protocol CreateIntineraries: UseCase {
+    typealias Default = DefaultCreateIntineraries
+    func invoke(requestValues: CreateIntinerariesRequestValues) -> AnyPublisher<[FlightDTO], Error>
+}
+
+struct DefaultCreateIntineraries: CreateIntineraries {
+    typealias T = CreateIntinerariesRequestValues
     typealias U = [FlightDTO]
     
     // MARK: Use cases
@@ -27,7 +33,7 @@ struct CreateIntineraries: UseCase {
         self.dateStringFormatter = dateStringFormatter
     }
     
-    func invoke(requestValues: RequestValues) -> AnyPublisher<[FlightDTO], Error> {
+    func invoke(requestValues: CreateIntinerariesRequestValues) -> AnyPublisher<[FlightDTO], Error> {
         // Corner cutting note: Error handling should be implemented for the edge case where a valid value isn't returned from the
         // dateStringFormatter
         let dateRangeBeginning = dateStringFormatter.format(for: Date(), timeOfDay: .beginning) ?? ""
@@ -37,7 +43,7 @@ struct CreateIntineraries: UseCase {
             .flatMap { places in
                 self.fetchFlights.invoke(requestValues: .init(
                     sourcePlaces: places,
-                    destinationPlaces: nil,
+                    destinationPlaces: nil, // corner cutting note; destinationPlaces has been left blank for this destination, to get the most possible results
                     dateRangeBeginning: dateRangeBeginning,
                     dateRangeEnd: dateRangeEnd)
                 )
@@ -48,8 +54,6 @@ struct CreateIntineraries: UseCase {
 
 // MARK: RequestValues
 
-extension CreateIntineraries {
-    struct RequestValues {
-        let searchTerm: String?
-    }
+struct CreateIntinerariesRequestValues {
+    let searchTerm: String?
 }

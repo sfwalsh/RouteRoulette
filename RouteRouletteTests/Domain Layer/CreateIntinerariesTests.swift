@@ -12,7 +12,7 @@ import Combine
 
 final class CreateIntinerariesTests: XCTestCase {
     
-    private var createIntineraries: CreateIntineraries!
+    private var createIntineraries: CreateIntineraries.Default!
     private var mockFetchFlights: MockFetchFlights!
     private var mockFetchPlaces: MockFetchPlaces!
     private var mockDateStringFormatter: MockDateStringFormatter!
@@ -25,7 +25,7 @@ final class CreateIntinerariesTests: XCTestCase {
         mockFetchPlaces = MockFetchPlaces()
         mockDateStringFormatter = MockDateStringFormatter()
         
-        createIntineraries = CreateIntineraries(
+        createIntineraries = CreateIntineraries.Default(
             fetchFlights: mockFetchFlights,
             fetchPlaces: mockFetchPlaces,
             dateStringFormatter: mockDateStringFormatter

@@ -11,7 +11,7 @@ import SwiftUI
 struct RouteRouletteApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ItineraryListModuleBuilder.build()
         }
     }
 }
