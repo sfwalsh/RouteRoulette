@@ -21,84 +21,42 @@ struct DefaultSearchTermCollection {
 }
 
 extension DefaultSearchTermCollection {
-    static func createEurope() -> Self {
-        // Corner cutting Note: localised strings should be used in a production app
-        DefaultSearchTermCollection(id: "eu", name: "Europe", searchTerms: [
-            "London",
-            "Paris",
-            "Rome",
-            "Berlin",
-            "Madrid",
-            "Prague",
-            "Athens",
-            "Warsaw",
-            "Dublin",
-            "Stockholm"
+    
+    static func create() -> Self {
+        // Corner cutting Note: localised strings should be used in a production app.
+        // I had intended to "Spotlight" on a particular region depending on the month of the year, e.g Central America, or the Arabian Peninusla, but ran out of time to implement this logic
+        let cities = [
+            // Europe
+            "London", "Paris", "Rome", "Berlin", "Madrid", "Prague", "Athens", "Warsaw", "Dublin", "Stockholm",
+            "Vienna", "Oslo", "Copenhagen", "Helsinki", "Lisbon", "Budapest", "Bucharest", "Zurich", "Barcelona", "Geneva",
+            "Amsterdam", "Brussels", "Marseille", "Milan", "Munich", "Frankfurt", "Edinburgh", "Glasgow", "Birmingham", "Saint Petersburg",
+            "Kiev", "Belgrade", "Riga", "Vilnius", "Sofia",
+            
+            // North America
+            "Toronto", "Los Angeles", "New York", "Mexico City", "Chicago", "Vancouver", "Montreal", "Miami", "San Francisco", "Washington DC",
+            "Houston", "Philadelphia", "Dallas", "San Diego", "Phoenix", "Nashville", "Denver", "Austin", "Boston", "Seattle",
+            "Las Vegas", "Atlanta", "Orlando", "Saint Louis", "Indianapolis", "Columbus", "San Antonio", "Portland", "Pittsburgh", "Charlotte",
+            
+            // Asia
+            "Tokyo", "Mumbai", "Beijing", "Bangkok", "Singapore", "Seoul", "Jakarta", "Kuala Lumpur", "Shanghai", "Hong Kong",
+            "Manila", "Ho Chi Minh City", "Chengdu", "Tianjin", "Delhi", "Dhaka", "Osaka", "Karachi", "Taipei", "Guangzhou",
+            "Shenzhen", "Bangalore", "Kolkata", "Lahore", "Chennai", "Chongqing", "Hangzhou", "Wuhan", "Tehran", "Ahmedabad",
+            
+            // Africa
+            "Cape Town", "Cairo", "Nairobi", "Lagos", "Casablanca", "Johannesburg", "Addis Ababa", "Dar es Salaam", "Accra", "Tunis",
+            "Algiers", "Khartoum", "Luanda", "Tripoli", "Windhoek", "Gaborone", "Lusaka", "Maputo", "Hargeisa", "Mogadishu",
+            "Lilongwe", "Bamako", "Ouagadougou", "Maseru", "Rabat", "Freetown", "Djibouti", "Kigali", "Bissau", "Monrovia",
+            
+            // South America
+            "Rio de Janeiro", "Buenos Aires", "Lima", "Santiago", "Bogotá", "Caracas", "Brasília", "Quito", "Montevideo", "Asunción",
+            "La Paz", "Georgetown", "Paramaribo", "Sucre", "Lima", "Santa Fe", "Valparaíso", "Córdoba", "Salvador", "Fortaleza",
+            "Recife", "Manaus", "Curitiba", "Belém", "Goiania", "Guayaquil", "Barranquilla", "Rosario", "Mendoza", "Medellín",
+            
+            // Oceania
+            "Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Auckland", "Wellington", "Christchurch",
+            "Dunedin", "Fiji", "Suva", "Papeete", "Noumea", "Hobart", "Launceston", "Wollongong", "Geelong", "Newcastle"
         ]
-        )
-    }
-    static func createNorthAmerica() -> Self {
-        // Corner cutting Note: localised strings should be used in a production app
-        DefaultSearchTermCollection(id: "na", name: "North America", searchTerms: [
-            "Toronto",
-            "Los Angeles",
-            "New York",
-            "Mexico City",
-            "Chicago",
-            "Vancouver",
-            "Montreal",
-            "Miami",
-            "San Francisco",
-            "Washington DC"
-        ]
-        )
-    }
-    static func createAsia() -> Self {
-        // Corner cutting Note: localised strings should be used in a production app
-        DefaultSearchTermCollection(id: "asia", name: "Asia", searchTerms: [
-            "Tokyo",
-            "Mumbai",
-            "Beijing",
-            "Bangkok",
-            "Singapore",
-            "Seoul",
-            "Jakarta",
-            "Kuala Lumpur",
-            "Shanghai",
-            "Hong Kong"
-        ]
-        )
-    }
-    static func createAfrica() -> Self {
-        // Corner cutting Note: localised strings should be used in a production app
-        DefaultSearchTermCollection(id: "africa", name: "Africa", searchTerms: [
-            "Cape Town",
-            "Cairo",
-            "Nairobi",
-            "Lagos",
-            "Casablanca",
-            "Johannesburg",
-            "Addis Ababa",
-            "Dar es Salaam",
-            "Accra",
-            "Tunis"
-        ]
-        )
-    }
-    static func createSouthAmerica() -> Self {
-        // Corner cutting Note: localised strings should be used in a production app
-        DefaultSearchTermCollection(id: "sa", name: "South America", searchTerms:  [
-            "Rio de Janeiro",
-            "Buenos Aires",
-            "Lima",
-            "Santiago",
-            "Bogotá",
-            "Caracas",
-            "Brasília",
-            "Quito",
-            "Montevideo",
-            "Asunción"
-        ]
-        )
+
+        return DefaultSearchTermCollection(id: "all", name: "All", searchTerms: cities)
     }
 }
